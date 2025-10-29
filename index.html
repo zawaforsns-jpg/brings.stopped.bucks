@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Site（自分のサイト）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Site</h1>
+    <p>ようこそ！ここは自分の学びをまとめるサイトです。</p>
+  </header>
+
+<div style="text-align:center; margin:1rem;">
+  <input type="text" id="searchInput" placeholder="キーワードを入力..." style="width:300px; padding:0.5rem;">
+  <button onclick="searchArticles()">検索</button>
+</div>
+
+<ul id="searchResults"></ul>
+
+<button id="show-all">すべての記事を表示</button>
+
+<main>
+  <h2>最近の記事</h2>
+  <ul id="article-list">
+    <li data-tags="勉強,IT">
+      <a href="./articles/article1.html">はじめての記事</a>
+      <p>タグ: <a href="#" class="tag">#勉強</a>, <a href="#" class="tag">#IT</a></p>
+    </li>
+    <li data-tags="勉強">
+      <a href="./articles/article2.html">JavaScriptの基本</a>
+      <p>タグ: <a href="#" class="tag">#勉強</a></p>
+    </li>
+  </ul>
+</main>
+
+  <footer>
+    <p>© 2025 My Site</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
