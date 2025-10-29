@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>タグ一覧 | My Site</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag-item {
+      background-color: #e0f0ff;
+      padding: 8px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    .tag-item:hover {
+      background-color: #cde4ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="../index.html" style="color:white; text-decoration:none;">My Site</a></h1>
+  </header>
+
+  <main>
+    <h2>タグ一覧</h2>
+    <div class="tag-list">
+      <a href="勉強.html" class="tag-item">#勉強</a>
+      <a href="仕事.html" class="tag-item">#HTML</a>
+      <a href="IT.html" class="tag-item">#IT</a>
+      <a href="日常.html" class="tag-item">#労働法</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 My Site</p>
+  </footer>
+</body>
+</html>
