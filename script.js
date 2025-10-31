@@ -1,32 +1,37 @@
+// ページが読み込まれたときに実行される処理
 document.addEventListener("DOMContentLoaded", () => {
-  const tags = document.querySelectorAll(".tag");
-  const articles = document.querySelectorAll("#article-list li");
 
-  tags.forEach(tag => {
-    tag.addEventListener("click", (e) => {
-      e.preventDefault(); // ページ遷移を止める
-      const selectedTag = tag.textContent.replace("#", "");
+  // 「検索ボタン」をクリックしたときの処理
+  const searchBtn = document.querySelector(".search-box button");
+  searchBtn.addEventListener("click", searchArticles);
 
-      // タイトルを変える
-      document.querySelector("h2").textContent = `タグ「#${selectedTag}」の記事一覧`;
-
-      // 記事を絞り込み表示
-      articles.forEach(article => {
-        const tags = article.getAttribute("data-tags").split(",");
-        if (tags.includes(selectedTag)) {
-          article.style.display = "";
-        } else {
-          article.style.display = "none";
-        }
-      });
+  // 「タグリンク」をクリックしたときの処理を登録
+  const tagLinks = document.querySelectorAll(".tag-link");
+  tagLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); // ページがリロードされるのを防ぐ
+      const tagText = link.textContent.replace('#',''); // #を除いたタグ名
+      filterByTag(tagText); // 指定のタグに一致する記事だけ表示
     });
   });
 });
 
-// 「すべての記事を表示」ボタン
-const showAllBtn = document.getElementById("show-all");
-showAllBtn.addEventListener("click", () => {
-  document.querySelector("h2").textContent = "最近の記事";
-  articles.forEach(article => article.style.display = "");
-});
+// 🔍 検索バーで記事を絞り込む関数
+function searchArticles() {
+  const input = document.getElementById("searchInput").value.toLowerCase(); // 入力文字を取得
+  const cards = document.querySelectorAll(".article-card");
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase(); // カード内の文字
+    card.style.display = text.includes(input) ? "" : "none"; // 含まれていれば表示、なければ非表示
+  });
+}
 
+// 🏷 タグクリックで記事を絞り込む関数
+function filterByTag(tag) {
+  const cards = document.querySelectorAll(".article-card");
+  cards.forEach(card => {
+    // カード内のタグ部分を取得（例: "#勉強 #IT" → ["勉強","IT"]）
+    const tags = card.querySelector("p").textContent.replace(/#/g,'').split(' ');
+    card.style.display = tags.includes(tag) ? "" : "none";
+  });
+}

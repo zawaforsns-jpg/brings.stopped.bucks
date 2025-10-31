@@ -2,15 +2,14 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>学びノート｜調べたことまとめサイト</title>
-  <link rel="stylesheet" href="style.css">
+  <title>記事1 - 学びノート</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
   <!-- 🌟 上部ヘッダー（タイトルと検索バー） -->
   <header class="site-header">
     <div class="header-left">
-      <h1>学びノート｜調べたことまとめサイト</h1>
+       <h1><a href="../index.html" style="color:white; text-decoration:none;">学びノート｜調べたことまとめサイト</a></h1>
     </div>
     <div class="header-right">
       <input type="text" id="searchInput" placeholder="キーワード検索...">
@@ -19,6 +18,7 @@
   </header>
 
   <!-- 🌟 左側サイドバー（タグ・メニュー） -->
+  <div class="page-layout">  <!-- ← 新しいラッパーを追加！ -->
   <aside class="left-sidebar">
     <h3>🏷 タグ一覧</h3>
     <ul>
@@ -29,32 +29,21 @@
     </ul>
   </aside>
 
-  <!-- 🌟 メインコンテンツ -->
-  <main class="main-content">
-    <h2>最新記事</h2>
-    <div class="article-grid">
-      <div class="article-card">
+ <main class="main-content">
+  <h2>#タグ１ に関する記事</h2>
+  <div class="article-grid">
+    <div class="article-card">
         <img src="images/article1-cover.jpg" alt="記事1">
-        <h3><a href="articles/article1.html">はじめての記事</a></h3>
+        <h3><a href="/articles/article1.html">はじめての記事</a></h3>
         <p class="tags">
        <a href="../tags/tag1.html">#タグ１</a>
       </p>
       </div>
-
-      <div class="article-card">
-        <img src="images/article2-cover.jpg" alt="記事2">
-        <h3><a href="articles/article2.html">記事２
-        </a></h3>
-        <p>#仕事 #日常</p>
-      </div>
-      <!-- 記事カードを追加 -->
-    </div>
-  </main>
+  <div>
+ </main>
 
   <footer>
-    <p>© 2025 学びノート</p>
+    <p>© 2025 My Site</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
