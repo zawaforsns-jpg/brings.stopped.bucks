@@ -104,15 +104,18 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 .article-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  width: 100%;             /* 横幅をカードいっぱいに */
+  aspect-ratio: 16 / 9;    /* パワポと同じ横長比率に固定 */
+  object-fit: contain;       /* はみ出す部分をトリミングして自然に */
+  border-radius: 8px;      /* 角を少し丸める（任意） */
+  display: block;          /* 余白防止 */
+ border: 1px solid #ddd;                /* 薄い枠線 */
 }
 .article-card h3 {
-  margin: 12px;
+  margin: 0 12px 0;
 }
 .article-card p {
-  margin: 0 12px 12px;
+  margin: 0 12px 0px;
   color: #777;
 }
 
