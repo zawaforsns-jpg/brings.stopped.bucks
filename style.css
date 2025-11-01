@@ -87,36 +87,63 @@ body {
 /* --- 記事カード一覧（グリッド配置） --- */
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 横に自動で並ぶ */
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 横3列に固定 */
+  gap: 24px; /* カードの間隔 */
   margin-left: 10px;
 }
 
+/* --- 各記事カード --- */
 .article-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column; /* 縦並びにする */
+  justify-content: space-between; /* 高さを揃える準備 */
+  height: 100%; /* グリッド内で高さ揃え */
 }
+
 .article-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
+/* --- カード内の画像設定 --- */
 .article-card img {
-  width: 100%;             /* 横幅をカードいっぱいに */
-  aspect-ratio: 16 / 9;    /* パワポと同じ横長比率に固定 */
-  object-fit: contain;       /* はみ出す部分をトリミングして自然に */
-  border-radius: 8px;      /* 角を少し丸める（任意） */
-  display: block;          /* 余白防止 */
- border: 1px solid #ddd;                /* 薄い枠線 */
+  width: 100%;
+  aspect-ratio: 16 / 9;      /* パワポ風の横長比率 */
+  object-fit: contain;         /* 画像を中央にトリミングしてフィット */
+  object-position: center;   /* 画像の中央を基準に表示 */
+  border-radius: 8px;
+  display: block;
+  border: 1px solid #ddd;
 }
+
+/* --- カード内テキスト部分 --- */
 .article-card h3 {
-  margin: 0 12px 0;
+  margin: 8px 12px 4px;
+  font-size: 1.1em;
 }
+
 .article-card p {
-  margin: 0 12px 0px;
+  margin: 0 12px 12px;
   color: #777;
+  line-height: 1.6; /* 行間を少し広くして見やすく */
+}
+
+/* --- レスポンシブ対応（スマホでもきれいに） --- */
+@media (max-width: 1024px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr); /* タブレットでは2列 */
+  }
+}
+
+@media (max-width: 600px) {
+  .article-grid {
+    grid-template-columns: 1fr; /* スマホでは1列 */
+  }
 }
 
 /* --- フッター --- */
