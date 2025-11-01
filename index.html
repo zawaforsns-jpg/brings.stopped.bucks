@@ -6,50 +6,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="header"></div>
 
-  <!-- 🌟 上部ヘッダー（タイトルと検索バー） -->
-  <header class="site-header">
-    <div class="header-left">
-      <h1>学びノート｜調べたことまとめサイト</h1>
-    </div>
-    <div class="header-right">
-      <input type="text" id="searchInput" placeholder="キーワード検索...">
-      <button onclick="searchArticles()">検索</button>
-    </div>
-  </header>
+  <div class="page-layout">
+    <div id="sidebar"></div>
 
-  <!-- 🌟 左側サイドバー（タグ・メニュー） -->
-  <aside class="left-sidebar">
-    <h3>🏷 タグ一覧</h3>
-    <ul>
-      <li><a href="tags/tag1.html" class="tag-link">#タグ１</a></li>
-      <li><a href="#" class="tag-link">#IT</a></li>
-      <li><a href="#" class="tag-link">#仕事</a></li>
-      <li><a href="#" class="tag-link">#日常</a></li>
-    </ul>
-  </aside>
-
-  <!-- 🌟 メインコンテンツ -->
-  <main class="main-content">
-    <h2>最新記事</h2>
-    <div class="article-grid">
-      <div class="article-card">
-        <img src="images/article1-cover.png" alt="記事1">
-        <h3><a href="articles/article1.html">はじめての記事</a></h3>
-        <p class="tags">
-       <a href="tags/tag1.html">#タグ１</a>
-      </p>
+    <main class="main-content">
+      <h2>最新記事</h2>
+      <div class="article-grid">
+        <div class="article-card">
+          <img src="images/article1-cover.png" alt="記事1">
+          <h3><a href="articles/article1.html">はじめての記事</a></h3>
+          <p class="tags"><a href="tags/tag1.html">#タグ１</a></p>
+        </div>
       </div>
-
-      <div class="article-card">
-        <img src="images/article2-cover.jpg" alt="記事2">
-        <h3><a href="articles/article2.html">記事２
-        </a></h3>
-        <p>#仕事 #日常</p>
-      </div>
-      <!-- 記事カードを追加 -->
-    </div>
-  </main>
+    </main>
+  </div>
 
   <footer>
     <p>© 2025 学びノート</p>
