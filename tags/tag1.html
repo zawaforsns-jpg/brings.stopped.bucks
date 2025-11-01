@@ -2,32 +2,14 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>記事1 - 学びノート</title>
+  <title>はじめての記事 - 学びノート</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <!-- 🌟 上部ヘッダー（タイトルと検索バー） -->
-  <header class="site-header">
-    <div class="header-left">
-       <h1><a href="../index.html" style="color:white; text-decoration:none;">学びノート｜調べたことまとめサイト</a></h1>
-    </div>
-    <div class="header-right">
-      <input type="text" id="searchInput" placeholder="キーワード検索...">
-      <button onclick="searchArticles()">検索</button>
-    </div>
-  </header>
+  <div id="header"></div>
 
-  <!-- 🌟 左側サイドバー（タグ・メニュー） -->
-  <div class="page-layout">  <!-- ← 新しいラッパーを追加！ -->
-  <aside class="left-sidebar">
-    <h3>🏷 タグ一覧</h3>
-    <ul>
-      <li><a href="../tags/tag1.html" class="tag-link">#タグ１</a></li>
-      <li><a href="#" class="tag-link">#IT</a></li>
-      <li><a href="#" class="tag-link">#仕事</a></li>
-      <li><a href="#" class="tag-link">#日常</a></li>
-    </ul>
-  </aside>
+  <div class="page-layout">
+    <div id="sidebar"></div>
 
  <main class="main-content">
   <h2>#タグ１ に関する記事</h2>
@@ -45,5 +27,7 @@
   <footer>
     <p>© 2025 My Site</p>
   </footer>
+
+   <script src="../script.js"></script> 
 </body>
 </html>
